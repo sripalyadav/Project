@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+
+</head>
+<body>
+
+
+			<br>
+            <div class="container my-5">
+            <h2  class="text-danger bg-info col-md-5" align="center">
+					Enter The UserDetails
+				</h2>
+            
+           <div class="card">
+			<div class="col-md-11">
+				                
+				<form th:action="@{/Save}" th:object=${user}
+					method="post">
+
+
+									<div class="form-group col-md-5">
+										<label>User Id</label>
+										<input type="text"
+											th:field="*{UserId}" placeholder="Enter UserId"
+											autofocus="autofocus" class="form-control" />
+<span th:if="${#fields.hasErrors('UserId')}" th:errors="*{UserId}" class="text-danger"></span>
+
+										<br>
+
+										<label>User FName</label>
+										<input type="text"
+											th:field="*{FirstName}" placeholder="Enter FirstName"
+											autofocus="autofocus" class="form-control" />
+											<span th:if="${#fields.hasErrors('FirstName')}" th:errors="*{FirstName}" class="text-danger"></span>
+										<br>
+										<label>User LastName</label>
+										<input type="text"
+											th:field="*{LastName}"
+										 autofocus="autofocus"
+											class="form-control" 
+											/>
+											
+										<br>
+										<label>MialId</label>
+										<input type="text"
+											th:field="*{Email}" placeholder="Enter MailId"
+											autofocus="autofocus" class="form-control" />
+											<br>
+											<label>Password</label>
+										<input type="password"
+											th:field="*{Password}" placeholder="Enter Mobile NUmber"
+											autofocus="autofocus" class="form-control" />
+										<span th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}" class="text-danger"></span>
+										<br>
+										<label>Gender</label>
+										<input type="text"
+											th:field="*{Gender}" placeholder="Enter Mobile NUmber"
+											autofocus="autofocus" class="form-control" />
+												<span th:if="${#fields.hasErrors('Gender')}" th:errors="*{Gender}" class="text-danger"></span>
+											<br>
+											<label>D</label>
+										<input type="text"
+											th:field="*{dob}" placeholder="Enter Mobile NUmber"
+											autofocus="autofocus" class="form-control" />
+												<span th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}" class="text-danger"></span>
+											<br>
+										<label>Mobile</label>
+										<input type="text"
+											th:field="*{Mobile}" placeholder="Enter Mobile NUmber"
+											autofocus="autofocus" class="form-control" />
+												<div><span th:if="${#fields.hasErrors('Mobile')}" th:errors="*{Mobile}" class="text-danger"></span>
+											</div>
+											<br>
+											
+											<label>Address</label>
+											<input type="text"
+											th:field="*{Address}" placeholder="Enter Address"
+											autofocus="autofocus" class="form-control" />
+												<p th:if="${#fields.hasErrors('Address')}" th:errors="*{Address}" class="text-danger"/>
+									</div>
+								
+								<br>
+								<button type="submit"
+									class="btn btn-success col-2" autofocus="autofocus">
+									Save
+								</button>
+								
+								<br>
+
+				</form>
+				</div>
+				</div>
+				</div>
+				
+				
+
+
+</body>
+</html>
